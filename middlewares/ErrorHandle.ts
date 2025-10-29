@@ -13,6 +13,7 @@ class ErrorHandle {
       }
     });
 
+    // 这个404只在/api路由下有用，其他404都转到前端代码中处理
     app.use(async (ctx: Context, next: () => Promise<unknown>) => {
       await next();
       if (ctx.status !== 404) {

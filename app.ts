@@ -26,7 +26,12 @@ container.loadModules([`${__dirname}/services/*.ts`], {
   },
 });
 
-// 日志
+
+/**
+ * 日志
+ * 📢注意事项：如果服务需要部署到AWS上
+ *  - 日志文件、下载文件的地址不能随意修改，有专门指定的地方
+ */
 configure({
   appenders: {
     cheese: { type: "file", filename: `${__dirname}/logs/nezha.log` },
